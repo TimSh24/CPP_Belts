@@ -26,3 +26,8 @@
 Реализация функции Stats ExploreKeyWords(const set<string>& key_words, istream& input), выполняющей подсчет слов из key_words во входном потоке   
 **Инструменты:** С++17, STL    
 **Навыки:** многопоточность  
+
+### 6. [Concurrent_map](Concurrent_map.cpp)
+Реализация шаблона ConcurrentMap, потдерживающего параллельный доступ к элементам   
+**Инструменты:** С++17, STL    
+**Навыки:** многопоточность  
