@@ -17,10 +17,10 @@
 **Инструменты:** С++17, STL  
 **Навыки:** move_семантика
 
-### 4. [Age_prediction_from_photos](https://github.com/TimSh24/Data_science_practicum_projects/blob/main/Age_prediction_from_photos/Age_prediction_from_photos.ipynb)
-Предсказание возраста покупателей по фото  
-**Инструменты:** Python, pandas, keras  
-**Навыки:** computer vision.
+### 4. [Simple_vector_template](Simple_vector.h)
+Шаблон класса SimpleVector  
+**Инструменты:** С++17, STL   
+**Навыки:** шаблоны классов, move-семантика
 
 ### 5. [Taxi_demand_forecasting](https://github.com/TimSh24/Data_science_practicum_projects/blob/main/Taxi_demand_forecasting/Taxi_demand_forecasting.ipynb)
 Предсказание заказов такси  
