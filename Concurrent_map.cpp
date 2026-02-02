@@ -43,10 +43,8 @@ public:
   };
 
 private:
-    //map<K, V> Map;
     deque<mutex> m;
     vector<map<K,V>> Map;
-  //mutex m;
 };
 
 void RunConcurrentUpdates(
