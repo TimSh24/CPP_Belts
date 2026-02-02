@@ -27,40 +27,6 @@ public:
         used_memory_ = move(other.used_memory_);
     }
 
-  /*BookPtr GetBook(const string& book_name) override {
-    lock_guard<mutex> g(m);
-    if (books_.find(book_name) != books_.end()) {
-        auto old_rang = bookname_rang[book_name];
-        bookname_rang[book_name] = prev(rang_bookname.end())->first + 1;
-        rang_bookname.erase(old_rang);
-        rang_bookname[bookname_rang[book_name]] = book_name;
-        return books_[book_name];
-    }
-    else {
-        auto unpacked_book = books_unpacker_->UnpackBook(book_name);
-        auto current_book_size = unpacked_book->GetContent().size();
-        if (settings_.max_memory >= current_book_size) {
-            while (settings_.max_memory - used_memory_ < current_book_size) {
-                if (!bookname_rang.empty()) {
-                    auto book_with_min_rang = rang_bookname.begin()->second;
-                    auto min_rang = rang_bookname.begin()->first;
-                    used_memory_ -= books_[book_with_min_rang]->GetContent().size();
-                    books_.erase(book_with_min_rang);
-                    bookname_rang.erase(book_with_min_rang);
-                    rang_bookname.erase(min_rang);
-                }
-            }
-            books_[book_name] = move(unpacked_book);
-            auto max_rang = (bookname_rang.empty()) ? 1 : prev(rang_bookname.end())->first + 1;
-            bookname_rang[book_name] = max_rang;
-            rang_bookname[max_rang] = book_name;
-            used_memory_ += books_[book_name]->GetContent().size();
-            return books_[book_name];
-        }
-    }
-      return nullptr;
-  }*/
-
   BookPtr GetBook(const string& book_name) override {
       lock_guard<mutex> g(m);
       if (books_.find(book_name) != books_.end()) {
@@ -118,3 +84,4 @@ unique_ptr<ICache> MakeCache(
 ) {
   return make_unique<LruCache>(LruCache(move(books_unpacker), settings));
 }
+
