@@ -26,7 +26,6 @@ struct Iterators {
     multimap<int, const Record*>::iterator karma_it;
 };
 
-// Реализуйте этот класс
 class Database {
 public:
     bool Put(const Record &record) {
