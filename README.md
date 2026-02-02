@@ -12,10 +12,10 @@
 **Инструменты:** С++17, STL   
 **Навыки:** ООП, алгоритмы
 
-### 3. [Well_location_selection](https://github.com/TimSh24/Data_science_practicum_projects/blob/main/Well_location_selection/Well_location_selection.ipynb)
-Выбор локации для скважины  
-**Инструменты:** Python, pandas, scikit-learn  
-**Навыки:** обработка данных, обучение моделей, Bootstrap.
+### 3. [Josephus_permutation](Josephus_permutation.cpp)
+Считалка Иосифа  
+**Инструменты:** С++17, STL  
+**Навыки:** move_семантика
 
 ### 4. [Age_prediction_from_photos](https://github.com/TimSh24/Data_science_practicum_projects/blob/main/Age_prediction_from_photos/Age_prediction_from_photos.ipynb)
 Предсказание возраста покупателей по фото  
