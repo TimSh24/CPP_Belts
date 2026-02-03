@@ -64,35 +64,6 @@ void SearchServer::AddQueriesStream(
 
 }
 
-
-
-/*void SearchServer::AddQueriesStream(
-        istream& query_input, ostream& search_results_output
-) {
-    for (string current_query; getline(query_input, current_query); ) {
-        const auto words = SplitIntoWords(current_query);
-        vector<int> docid_count(50000);
-        for (const auto &word: words) {
-            for (const size_t docid: index.Lookup(static_cast<string>(word))) {
-                docid_count[docid]++;
-            }
-        }
-
-        Priority_queue search_results;
-        for (int i = 0; i < docid_count.size(); i++) {
-            if (docid_count[i]) search_results.Insert(make_pair(i,docid_count[i]));
-        }
-        search_results_output << current_query << ':';
-        auto f = Head1(search_results, 5);
-        for (auto[docid, hitcount]: f) {
-            search_results_output << " {"
-                                  << "docid: " << docid << ", "
-                                  << "hitcount: " << hitcount << '}';
-        }
-        search_results_output << endl;
-    }
-}*/
-
 void InvertedIndex::Add(const string& document) {
   docs.push_back(move(document));
 
@@ -112,3 +83,4 @@ void InvertedIndex::Add(const string& document) {
     return empty_vector;
   }
 }
+
