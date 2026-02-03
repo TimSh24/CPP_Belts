@@ -1,3 +1,32 @@
+/*
+Реализован шаблон ConcurrentMap со следующим интерфейсом:
+
+template <typename K, typename V>
+class ConcurrentMap {
+public:
+  static_assert(is_integral_v<K>, "ConcurrentMap supports only integer keys");
+
+  struct Access {
+    V& ref_to_value;
+  };
+
+  explicit ConcurrentMap(size_t bucket_count);
+
+  Access operator[](const K& key);
+
+  map<K, V> BuildOrdinaryMap();
+};
+
+Конструктор класса ConcurrentMap<K, V> принимает количество подсловарей, на которые надо разбить всё пространство ключей.
+Operator[] ведет себя так же, как аналогичный оператор у map — если ключ key присутствует в словаре, он должен возвращать объект класса Access, 
+содержащий ссылку на соответствующее ему значение; если же key отсутствует в словаре, в него надо добавить пару (key, V()) 
+и вернуть объект класса Access, содержащий ссылку на только что добавленное значение.
+Структура Access предоставляет ссылку на значение словаря и обеспечивать синхронизацию доступа к нему.
+Метод BuildOrdinaryMap сливает вместе части словаря и возвращает весь словарь целиком. При этом он является потокобезопасным, 
+то есть корректно работать, когда другие потоки выполняют операции с ConcurrentMap.
+*/
+
+
 #include "test_runner.h"
 #include "profile.h"
 #include <algorithm>
