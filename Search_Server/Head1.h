@@ -9,4 +9,5 @@ vector<pair<int,int>> Head1(Priority_queue &q, int top) {
         answer.push_back(q.ExtractMax());
     }
     return answer;
+
 }
